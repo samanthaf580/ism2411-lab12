@@ -1,4 +1,10 @@
 
+# Reflection:
+# 1. Python is better than excel when doing these tasks because it is better at automating repetitve tasks, processing large amounts of data, and cleaning files. Excel is easier to use when quickly organizing data and creating charts.
+# 2. A real business situation that would use append is tracking customer purchases and sales as they are happening. Here, append mode is useful because it adds transactions without changing previous records and it keeps a continuous history of the transactions. 
+
+
+
 
 from datetime import datetime
 
