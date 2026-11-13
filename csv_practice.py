@@ -1,5 +1,7 @@
 
 
+from datetime import datetime
+
 # Exercise 2
 
 import csv 
@@ -116,4 +118,15 @@ print("\nSales summary by product:")
 
 for product in sorted(sales_summary):
     print(f"{product}: ${sales_summary[product]:.2f}")
-    
+
+
+
+
+# Exercise 8
+
+current_time = datetime.now()
+
+with open("data/run_log.txt", "a") as file:
+    file.write(f"{current_time} - total revenue: ${revenue:.2f}\n")
+
+print("run log updated")
