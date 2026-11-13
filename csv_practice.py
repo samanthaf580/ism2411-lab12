@@ -75,3 +75,22 @@ print(f"Rows written: {written_count}")
 print(f"Original rows: {original_count}")
         
 
+# Exercise 6
+
+revenue = 0
+
+with open("data/sales.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        product = row["product"]
+        price = float(row["price"])
+        quantity = int(row["quantity"])
+        total = price * quantity
+        revenue += total
+
+        print(f"{product}: {quantity} units x ${price:.2f} = ${total:.2f}")
+
+print(f"\nTotal revenue with DictReader: ${revenue:.2f}")
+
+# csv.reader uses column indexes which is good for simple CSV files with a fixed column order, while DictReader uses column names which makes code easier to understand when using multiple columns.
