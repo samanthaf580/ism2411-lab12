@@ -94,3 +94,26 @@ with open("data/sales.csv", "r") as file:
 print(f"\nTotal revenue with DictReader: ${revenue:.2f}")
 
 # csv.reader uses column indexes which is good for simple CSV files with a fixed column order, while DictReader uses column names which makes code easier to understand when using multiple columns.
+
+# Exercise 7
+sales_summary = {}
+
+with open("data/sales.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        product = row["product"]
+        price = float(row["price"])
+        quantity = int(row["quantity"])
+        total = price * quantity
+
+        if product in sales_summary:
+            sales_summary[product] += total
+        else:
+            sales_summary[product] = total
+
+print("\nSales summary by product:")
+
+for product in sorted(sales_summary):
+    print(f"{product}: ${sales_summary[product]:.2f}")
+    
